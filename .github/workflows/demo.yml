@@ -1,0 +1,20 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions
+on: [push]
+#on:
+ # push:
+  #  branches:
+   # - main
+jobs:                           #jobs: is used to define one or more jobs that can run independently or sequentially in a workflow
+  deploy:                       #deploy: is used to specify the deployment configuration for your workflow. It is used to deploy your application to a server or a cloud service.
+    name: build
+    runs-on: windows-2019
+    
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2  #uses: actions/checkout is an official Github Action used to check-out a repository so a workflow can access it. 
+                                 #v2 specifies the version of the action being used
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET2 }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
