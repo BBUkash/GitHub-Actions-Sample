@@ -15,6 +15,6 @@ jobs:                           #jobs: is used to define one or more jobs that c
       uses: actions/checkout@v2  #uses: actions/checkout is an official Github Action used to check-out a repository so a workflow can access it. 
                                  #v2 specifies the version of the action being used
       env:
-        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET2 }}
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
